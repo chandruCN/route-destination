@@ -3,9 +3,13 @@
 var convert = document.querySelector(".convert");
 var fromlocation = document.querySelector(".from");
 var tolocation = document.querySelector(".to");
+var destination = document.querySelector(".destination");
+var destinationroute = document.getElementById("destination-route");
 var shortestDistances;
 var start;
 var end;
+var path;
+var endDate;
 
 //############################################################
 
@@ -97,24 +101,40 @@ const dijkstra = (graph, start, end) => {
     visited.push(vertex);
   }
 
-  // convert.addEventListener("click", dijkstra);
-
   const path = tracePath(shortestDistances, start, end);
 
-  console.log(
-    "Shortest path is: ",
-    path.join(" -> "),
+  var startDate = new Date()
+    .toLocaleDateString("en-GB", {
+      day: "numeric",
+      month: "short",
+      year: "numeric",
+    })
+    .split(" ")
+    .join("-");
+  startDate = new Date(startDate.replace(/-/g, "/"));
+  var endDate = "",
+    noOfDaysToAdd = shortestDistances[end].distance - 1,
+    count = 0;
+  while (count < noOfDaysToAdd) {
+    endDate = new Date(startDate.setDate(startDate.getDate() + 1));
+    if (endDate.getDay() != 0 && endDate.getDay() != 6) {
+      count++;
+    }
+  }
+  console.log(shortestDistances);
 
-    shortestDistances[end].distance
-  );
+  var finaldate =
+    "YOUR DESTINATION IN SHORTEST PATH :" +
+    path.join(" -> ") +
+    " " +
+    shortestDistances[end].distance +
+    " days " +
+    "arraival at " +
+    endDate.toISOString().slice(0, 10);
+
+  destination.innerHTML = finaldate;
 };
-dijkstra(graph, "madurai", "banglore");
 
-// var someDate = new Date();
-// var numberOfDaysToAdd = shortestDistances;
-// var result = someDate.setDate(someDate.getDate() + numberOfDaysToAdd);
-// console.log(new Date(result));
-var someDate = new Date();
-var numberOfDaysToAdd = distance;
-var result = someDate.setDate(someDate.getDate() + numberOfDaysToAdd);
-console.log(new Date(result));
+convert.addEventListener("click", (event) => {
+  dijkstra(graph, start, end);
+});
