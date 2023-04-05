@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Currency Converter</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amiri&family=Lobster&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- linking style.css file-->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="main">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">From</span>
+              </div>
+              <select class="form-control from" id="route1">
+                <option value="">Select One …</option>
+                <option value="thirunelveli">THIRUNELVELI</option>
+                <option value="madurai">MADURAI</option>
+                <option value="trichy">THIRUCHY</option>
+                <option value="salem">SALEM</option>
+                <option value="coimbatore">COIMBATORE</option>
+                <option value="chennai">CHENNAI</option>
+                <option value="banglore">BANGLORE</option>
+                <option value="mumbai">MUMBAI</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="col-sm-6">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">To</span>
+              </div>
+              <select class="form-control to" id="route2">
+                <option value="">Select One …</option>
+                <option value="thirunelveli">THIRUNELVELI</option>
+                <option value="madurai">MADURAI</option>
+                <option value="trichy">THIRUCHY</option>
+                <option value="salem">SALEM</option>
+                <option value="coimbatore">COIMBATORE</option>
+                <option value="chennai">CHENNAI</option>
+                <option value="banglore">BANGLORE</option>
+                <option value="mumbai">MUMBAI</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div id="destination-route">
+          <!-- convert button -->
+          <button class="btn btn-primary convert m-2" type="submit">
+            Destination route --
+          </button>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <!-- Display the converted amount -->
+        <h2>
+          <span class="destination" style="color: rgb(13, 14, 13)"> </span>
+        </h2>
+      </div>
+    </div>
+
+    <!-- linking script.js file -->
+    <script src="script.js"></script>
+  </body>
+</html>
