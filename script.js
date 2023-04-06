@@ -27,7 +27,7 @@ const graph = {
   thirunelveli: { madurai: 2 },
   madurai: { thirunelveli: 2, salem: 3, coimbatore: 3, trichy: 2 },
   trichy: { madurai: 2, chennai: 3 },
-  salem: { madurai: 3, banglore: 3 },
+  salem: { madurai: 3, banglore: 2 },
   coimbatore: { madurai: 3, banglore: 3, chennai: 3 },
   chennai: { coimbatore: 3, banglore: 2, mumbai: 5 },
   banglore: { salem: 2, coimbatore: 3, mumbai: 3 },
