@@ -130,7 +130,7 @@ const dijkstra = (graph, start, end) => {
     shortestDistances[end].distance +
     " days " +
     "arraival at " +
-    endDate.toISOString().slice(0, 10);
+    endDate.toLocaleDateString.slice(0, 10);
 
   destination.innerHTML = finaldate;
 };
