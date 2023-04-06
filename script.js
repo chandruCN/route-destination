@@ -113,7 +113,7 @@ const dijkstra = (graph, start, end) => {
     .join("-");
   startDate = new Date(startDate.replace(/-/g, "/"));
   var endDate = "",
-    noOfDaysToAdd = shortestDistances[end].distance - 1,
+    noOfDaysToAdd = shortestDistances[end].distance ,
     count = 0;
   while (count < noOfDaysToAdd) {
     endDate = new Date(startDate.setDate(startDate.getDate() + 1));
